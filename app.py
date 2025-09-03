@@ -46,11 +46,13 @@ def index():
                 if prediction_info[1] == 'Below Average':
                     advice = "The price is **good** compared to the daily average. It's a great time to book!"
                 else:
-                    advice = "The price is **above average** for this day. If you wait longer, prices are very likely to go even higher, especially for last-minute bookings."
+                    advice = ("The price is **above average** for this day. If you wait longer, prices are very likely "
+                              "to go even higher, especially for last-minute bookings.")
 
                 # Extra tip for booking timing
                 if days_between <= 3:
-                    advice += " You're booking very close to the travel date—prices usually spike as the date approaches."
+                    advice += ("You're booking very close to the travel date—prices usually spike as the date "
+                               "approaches.")
                 elif days_between >= 15:
                     advice += " Booking early usually gets you the best prices."
                 elif days_between <= 7:
