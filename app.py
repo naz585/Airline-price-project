@@ -1,10 +1,12 @@
+import os
+
 from flask import Flask, render_template, request
 import pandas as pd
 from american_airlines_predictor import AmericanAirlinesPricePredictor
 from datetime import date
 
 app = Flask(__name__)
-
+port = int(os.environ.get('PORT', 5000))
 # Load predictor and train at app start
 predictor = AmericanAirlinesPricePredictor()
 
@@ -69,4 +71,4 @@ def index():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True,host='0.0.0.0', port=port)
