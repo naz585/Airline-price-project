@@ -1,3 +1,5 @@
+import os
+
 from flask import Flask, render_template, request
 import pandas as pd
 from american_airlines_predictor import AmericanAirlinesPricePredictor
