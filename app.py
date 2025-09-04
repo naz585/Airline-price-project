@@ -5,7 +5,7 @@ import pandas as pd
 from american_airlines_predictor import AmericanAirlinesPricePredictor
 from datetime import date
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='Templates')
 port = int(os.environ.get('PORT', 5000))
 # Load predictor and train at app start
 predictor = AmericanAirlinesPricePredictor()
